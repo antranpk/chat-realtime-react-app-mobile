@@ -1,4 +1,4 @@
-import { initializeApp, getApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import { initializeFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
@@ -20,4 +20,4 @@ const sendMessage = (roomId, user, text) => {
   addDoc(collection(db, 'chats', roomId, 'messages'), { uid: user.uid, timestamp: serverTimestamp(),  text, user });
 };
 
-export { db, auth, sendMessage };
+export { appFirebase, db, auth, sendMessage };

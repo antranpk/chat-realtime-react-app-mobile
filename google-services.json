@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1013936851612",
+    "project_id": "app-noty-2273a",
+    "storage_bucket": "app-noty-2273a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013936851612:android:caa9f1eb7c3df88375bb59",
+        "android_client_info": {
+          "package_name": "com.amv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013936851612-2kknfov1ala17f2gg4tstj68fbs23bes.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYdEp9_isTi2xP3xorDlsCmGPWVd-I5Pw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013936851612-2kknfov1ala17f2gg4tstj68fbs23bes.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
