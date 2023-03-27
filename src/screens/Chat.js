@@ -1,7 +1,7 @@
 import React, { useCallback, useState, useLayoutEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Avatar } from 'react-native-elements';
-import { auth, db } from '../services/firebase';
+import { auth, db, sendMessage } from '../services/firebase';
 import { signOut } from 'firebase/auth';
 import { collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from 'firebase/firestore';
 import { GiftedChat } from 'react-native-gifted-chat';
@@ -54,9 +54,7 @@ const Chat = ({ navigation, route }) => {
 
         const { text, user } = messages[0];
 
-        console.log(user);
-
-        addDoc(collection(db, 'chats', roomId, 'messages'), { uid: user.uid, timestamp: serverTimestamp(),  text, user });
+        sendMessage(roomId, user, text);
     }, []);
 
     return (

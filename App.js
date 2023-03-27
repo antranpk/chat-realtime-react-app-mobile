@@ -11,7 +11,6 @@ import Constants from 'expo-constants';
 const Stack = createStackNavigator();
 
 const App = () => {
-  console.log(process.env.REACT_APP_API_KEY);
   return (
     <NavigationContainer>
       <Stack.Navigator >

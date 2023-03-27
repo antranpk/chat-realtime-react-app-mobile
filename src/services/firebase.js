@@ -1,5 +1,5 @@
 import { initializeApp, getApp } from 'firebase/app';
-import { initializeFirestore } from 'firebase/firestore';
+import { initializeFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -11,9 +11,13 @@ const firebaseConfig = {
   appId: '1:1042363916345:web:28355cda3e23fce360ede8',
 };
 
-const app = initializeApp(firebaseConfig);
+const appFirebase = initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
-const db = initializeFirestore(app, {experimentalForceLongPolling: true});
+const auth = getAuth(appFirebase);
+const db = initializeFirestore(appFirebase, {experimentalForceLongPolling: true});
 
-export { db, auth };
+const sendMessage = (roomId, user, text) => {
+  addDoc(collection(db, 'chats', roomId, 'messages'), { uid: user.uid, timestamp: serverTimestamp(),  text, user });
+};
+
+export { db, auth, sendMessage };
